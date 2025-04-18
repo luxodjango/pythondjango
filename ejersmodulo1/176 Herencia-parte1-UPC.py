@@ -9,3 +9,7 @@ class Animal:
 class Perro(Animal):
     def hacer_sonido(self):
         print('Puedo ladrar')
+        
+class Gato(Animal):
+    def hacer_sonido(self):
+        print("maullo")
