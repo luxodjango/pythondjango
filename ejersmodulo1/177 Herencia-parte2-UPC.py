@@ -27,7 +27,7 @@ perro1.comer()
 perro1.dormir()
 perro1.hacer_sonido()
 
-print('\nClase Hija, soy un gato')
+print('\nClase Hija, soy un gatete')
 gato1 = Gato()
 gato1.comer()
 gato1.dormir()
