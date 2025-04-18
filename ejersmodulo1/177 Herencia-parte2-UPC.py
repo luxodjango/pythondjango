@@ -9,6 +9,10 @@ class Animal:
 class Perro(Animal):
     def hacer_sonido(self):
         print('Puedo ladrar')
+        
+class Gato(Animal):
+    def hacer_sonido(self):
+        print("maullo")
 
 # Programa principal
 print('*** Ejemplo de Herencia en Python ***')
@@ -22,3 +26,9 @@ perro1 = Perro()
 perro1.comer()
 perro1.dormir()
 perro1.hacer_sonido()
+
+print('\nClase Hija, soy un gato')
+gato1 = Gato()
+gato1.comer()
+gato1.dormir()
+gato1.hacer_sonido()
