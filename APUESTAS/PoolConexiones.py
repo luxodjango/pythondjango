@@ -8,7 +8,7 @@ class Conexion:
 
     DATABASE = 'apuestas_db'        # Nombre de la base de datos
     USERNAME = 'root'               # Nombre de usuario de la base de datos
-    PASSWORD = 'ellagarto123'       # Password de la base de datos
+    PASSWORD = 'admin'              # Password de la base de datos
     DB_PORT = '3306'                # Puerto de la base de datos
     HOST = 'localhost'              # Direccion ip del servidor de base de datos
     POOL_SIZE = 5                   # Tamaño del pool de conexiones cuantos objetos se van a crear
