@@ -1,5 +1,5 @@
-from zona_fit_db.cliente import Cliente
-from zona_fit_db.cliente_dao import ClienteDAO
+from ClaseClienteUPC import Cliente
+from cliente_dao import ClienteDAO
 
 print('*** Clientes Zona Fit (GYM) ***')
 opcion = None
