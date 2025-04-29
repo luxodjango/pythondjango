@@ -26,99 +26,64 @@
       <div class="border rounded-3 p-2">
         <!-- aca va el formulario -->
         <form action="/guardar" method="post" autocomplete="off">
-          {{forma.csrf_token}}  
-          <!-- AGREGAMOS EL TOKEN PARA USAR FLASK-WTF CON MAS SEGURIDAD -->
-
           <!--Nombre-->
           <div class="form-floating py-2">
-            <!-- <input type="text" class="form-control" id="nombre" placeholder="Nombre" />
-            <label for="nombre">Nombre</label> -->
-            {{forma.nombre(class="form-control", placeholder="Nombre")}} 
-            <!-- Accedemos al nombre del objeto forma y le agregamos la clase bootstrap form-control 
-             y el placeholder para generar el elemento de tipo input-->
-             {{forma.nombre.label}} 
-            <!-- generamos el elemento de tipo label-->                        
+            <input type="text" class="form-control" id="nombre" placeholder="Nombre" />
+            <label for="nombre">Nombre</label>
           </div>
           <!-- apellidos -->
           <div class="form-floating py-2">
-            <!-- <input type="text" class="form-control" id="apellidos" placeholder="Apellidos" />
-            <label for="apellidos">Apellidos</label> -->
-            {{forma.apellidos(class="form-control", placeholder="Nombre")}} 
-            <!-- Accedemos al apellido del objeto forma y le agregamos la clase bootstrap form-control 
-             y el placeholder para generar el elemento de tipo input-->
-             {{forma.apellidos.label}} 
-            <!-- generamos el elemento de tipo label-->   
+            <input type="text" class="form-control" id="apellidos" placeholder="Apellidos" />
+            <label for="apellidos">Apellidos</label>
           </div>
           <!-- numero_apuestas -->
           <div class="form-floating py-2">
-            {{forma.numero_apuestas(class="form-control", placeholder="Nombre")}} 
-            <!-- Accedemos al numero_apuestas del objeto forma y le agregamos la clase bootstrap form-control 
-             y el placeholder para generar el elemento de tipo input-->
-             {{forma.numero_apuestas.label}} 
-            <!-- generamos el elemento de tipo label-->  
+            <input type="number" class="form-control" id="numero_apuestas" placeholder="Numero Apuestas" />
+            <label for="numero_apuestas">Numero Apuestas</label>
           </div>
           <!-- apuestas_ganadas-->
           <div class="form-floating py-2">
-            {{forma.apuestas_ganadas(class="form-control", placeholder="Nombre")}} 
-            <!-- Accedemos al apuestas_ganadas del objeto forma y le agregamos la clase bootstrap form-control 
-             y el placeholder para generar el elemento de tipo input-->
-             {{forma.apuestas_ganadas.label}} 
-            <!-- generamos el elemento de tipo label-->  
+            <input type="number" class="form-control" id="apuestas_ganadas" placeholder="Apuestas Ganadas" />
+            <label for="apuestas_ganadas">Apuestas Ganadas</label>
           </div>
           <!-- apuestas_perdidas -->
           <div class="form-floating py-2">
-            {{forma.apuestas_perdidas(class="form-control", placeholder="Nombre")}} 
-            <!-- Accedemos al apuestas_perdidas del objeto forma y le agregamos la clase bootstrap form-control 
-             y el placeholder para generar el elemento de tipo input-->
-             {{forma.apuestas_perdidas.label}} 
+            <input type="number" class="form-control" id="apuestas_perdidas" placeholder="Apuestas Perdidas" />
+            <label for="apuestas_perdidas">Apuestas Perdidas</label>
           </div>
           <!--total_apostado -->
           <div class="form-floating py-2">
-            {{forma.total_apostado(class="form-control", placeholder="Nombre")}} 
-            <!-- Accedemos al total_apostado del objeto forma y le agregamos la clase bootstrap form-control 
-             y el placeholder para generar el elemento de tipo input-->
-             {{forma.total_apostado.label}}
+            <input type="number" class="form-control" id="total_apostado" placeholder="Total Apostado" />
+            <label for="total_apostado">Total Apostado</label>
           </div>
           <!--total_ganado -->
           <div class="form-floating py-2">
-            {{forma.total_ganado(class="form-control", placeholder="Nombre")}} 
-            <!-- Accedemos al total_ganado del objeto forma y le agregamos la clase bootstrap form-control 
-             y el placeholder para generar el elemento de tipo input-->
-             {{forma.total_ganado.label}}
+            <input type="number" class="form-control" id="total_ganado" placeholder="Total Ganado" />
+            <label for="total_ganado">Total Ganado</label>
           </div>
           <!--total_perdido -->
           <div class="form-floating py-2">
-            {{forma.total_perdido(class="form-control", placeholder="Nombre")}} 
-            <!-- Accedemos al total_perdido del objeto forma y le agregamos la clase bootstrap form-control 
-             y el placeholder para generar el elemento de tipo input-->
-             {{forma.total_perdido.label}}
+            <input type="number" class="form-control" id="total_perdido" placeholder="Total Perdido" />
+            <label for="total_perdido">Total Perdido</label>
           </div>
           <!--ganado_por_apuesta -->
           <div class="form-floating py-2">
-            {{forma.ganado_por_apuesta(class="form-control", placeholder="Nombre")}} 
-            <!-- Accedemos al ganado_por_apuesta del objeto forma y le agregamos la clase bootstrap form-control 
-             y el placeholder para generar el elemento de tipo input-->
-             {{forma.ganado_por_apuesta.label}}
+            <input type="number" class="form-control" id="ganado_por_apuesta" placeholder="Ganado por Apuesta" />
+            <label for="ganado_por_apuesta">Ganado por Apuesta</label>
           </div>
           <!--balance -->
           <div class="form-floating py-2">
-            {{forma.balance(class="form-control", placeholder="Nombre")}} 
-            <!-- Accedemos al balance del objeto forma y le agregamos la clase bootstrap form-control 
-             y el placeholder para generar el elemento de tipo input-->
-             {{forma.balance.label}} 
+            <input type="number" class="form-control" id="balance" placeholder="Balance" />
+            <label for="balance">Balance</label>
           </div>
           <!--Botones -->
           <!--Boton Guardar -->
           <div class="text-center py-2">
-            <!-- <button type="submit" class="btn btn-warning btn-sm me-3">
+            <button type="submit" class="btn btn-warning btn-sm me-3">
               Guardar
-            </button> -->
-            {{forma.guardar(class="btn btn-warning btn-sm me-2")}} 
+            </button>
             <!--Boton Limpiar formulario -->
-            <input type="reset" class="btn btn-primary btn-sm me-2" value="Limpiar Formulario" />
-            <a href="/limpiar" class="btn btn-danger btn-sm">
-              Limpiar
-            </a>
+            <input type="reset" class="btn btn-danger btn-sm" value="Limpiar" />
           </div>
         </form>
       </div> <!-- div cierre del contenedor del formulario -->

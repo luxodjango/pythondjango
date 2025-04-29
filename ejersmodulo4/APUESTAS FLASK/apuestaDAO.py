@@ -133,7 +133,7 @@ class ApuestaDAO: # Clase ApuestaDAO para manejar la base de datos de apuesta
                 
 if __name__ == '__main__':
     # Seleccionamos las apuestas
-    apuestas = ApuestaDAO.seleccionar()         # Llamar al método seleccionar de la clase ApuestaDAO
+    apuestas = ApuestaDAO.seleccionar_apuesta()         # Llamar al método seleccionar de la clase ApuestaDAO
     for apuesta in apuestas:                    # Recorrer la lista de apuestas obtenida de la base de datos
                                                 # Imprimir cada apuesta en la consola
         print(apuesta)
