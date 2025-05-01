@@ -14,7 +14,7 @@ app.config ['SECRET_KEY'] = 'juanito' #llave secreta que nos pide al utilizar el
                                          
 titulo_app ='PEDRA Apuestas' #definimos variable para pasar por parametro a la plantilla 
                             #html en la platilla tendremos que recogerla con {{titulo}}
-titulo_app2 ='Indice2' #definimos variable para pasar por parametro a la plantilla 
+titulo_app2 ='INDICE 2' #definimos variable para pasar por parametro a la plantilla 
                             #html en la platilla tendremos que recogerla con {{titulo2}}
 
 
