@@ -14,7 +14,8 @@ app.config ['SECRET_KEY'] = 'juanito' #llave secreta que nos pide al utilizar el
                                          
 titulo_app ='PEDRA Apuestas' #definimos variable para pasar por parametro a la plantilla 
                             #html en la platilla tendremos que recogerla con {{titulo}}
-
+titulo_app2 ='Indice2' #definimos variable para pasar por parametro a la plantilla 
+                            #html en la platilla tendremos que recogerla con {{titulo2}}
 
 
 @app.route('/')  # url: http://localhost:5000/
@@ -43,14 +44,17 @@ def guardar():
                                 
 
 @app.route('/index2.html') # url http://localhost:5000/index.html
-def inicio2():
-    app.logger.debug('Entramos al path /index2.html')
+def index2():
+    app.logger.debug('Entramos al index2/')
     #recuperamos las personas en la variable personas_db
     personas_db= PersonaDAO.seleccionar()
 
-
-    return render_template('index.html',titulo=titulo_app, personas=personas_db) #pasamos un pareametro
-                                                            #parametro=valor   
+    persona = Persona()                         #Creamos un objeto de persona form vacio para llenarlo
+    persona_forma = PersonaForma(obj=persona)   #con los valores del formulario
+    
+    return render_template('index2.html',titulo2 =titulo_app2, personas=personas_db, 
+                                        forma=persona_forma)        #pasamos un pareametro
+                                                                    #parametro=valor   
                                     #en la platilla tendremos que recogerla con {{titulo}} 
 
 if __name__ == '__main__':

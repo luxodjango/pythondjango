@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{titulo}}</title>
+  <title>{{titulo2}}</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -15,75 +15,115 @@
     <!-- Titulo -->
     <div class="container py-3">
       <h1 class="text-center display-5 text-warning">
-        {{titulo}} <i class="bi bi-award"></i>
+        <i class="bi bi-coin"></i> {{titulo2}} <i class="bi bi-coin"></i>
       </h1>
     </div>
   </div> <!-- fin div titulo -->
+  <div class="container-fluid pb-3 text-center py-3">
+    <a href="/index.html" class="btn btn-danger btn-sm">Home</a>
+    <a href="/index2.html" class="btn btn-danger btn-sm">Index2</a>
+  </div>
   <!-- Grid principal -->
   <div class="container-fluid pb-3">
     <div class="d-grid gap-3" style="grid-template-columns: 1fr 2fr;">
       <!-- contenedor del formulario -->
       <div class="border rounded-3 p-2">
         <!-- aca va el formulario -->
-        <form action="/guardar" method="post" autocomplete="off">
+        <form action="/guardar" method="post" autocomplete="off"><!-- url a la que se enviara la 
+                                                            informacion del form con el metodo post -->
+          {{forma.csrf_token}}  
+          <!-- AGREGAMOS EL TOKEN PARA USAR FLASK-WTF CON MAS SEGURIDAD contra ataques CSRF-->
+
           <!--Nombre-->
           <div class="form-floating py-2">
-            <input type="text" class="form-control" id="nombre" placeholder="Nombre" />
-            <label for="nombre">Nombre</label>
+            <!-- <input type="text" class="form-control" id="nombre" placeholder="Nombre" />
+            <label for="nombre">Nombre</label> -->
+            {{forma.nombre(class="form-control", placeholder="Nombre")}} 
+            <!-- Accedemos al nombre del objeto forma y le agregamos la clase bootstrap form-control 
+             y el placeholder para generar el elemento de tipo input-->
+             {{forma.nombre.label}} 
+            <!-- generamos el elemento de tipo label-->                        
           </div>
           <!-- apellidos -->
           <div class="form-floating py-2">
-            <input type="text" class="form-control" id="apellidos" placeholder="Apellidos" />
-            <label for="apellidos">Apellidos</label>
+            <!-- <input type="text" class="form-control" id="apellidos" placeholder="Apellidos" />
+            <label for="apellidos">Apellidos</label> -->
+            {{forma.apellidos(class="form-control", placeholder="Nombre")}} 
+            <!-- Accedemos al apellido del objeto forma y le agregamos la clase bootstrap form-control 
+             y el placeholder para generar el elemento de tipo input-->
+             {{forma.apellidos.label}} 
+            <!-- generamos el elemento de tipo label-->   
           </div>
           <!-- numero_apuestas -->
           <div class="form-floating py-2">
-            <input type="number" class="form-control" id="numero_apuestas" placeholder="Numero Apuestas" />
-            <label for="numero_apuestas">Numero Apuestas</label>
+            {{forma.numero_apuestas(class="form-control", placeholder="Nombre")}} 
+            <!-- Accedemos al numero_apuestas del objeto forma y le agregamos la clase bootstrap form-control 
+             y el placeholder para generar el elemento de tipo input-->
+             {{forma.numero_apuestas.label}} 
+            <!-- generamos el elemento de tipo label-->  
           </div>
           <!-- apuestas_ganadas-->
           <div class="form-floating py-2">
-            <input type="number" class="form-control" id="apuestas_ganadas" placeholder="Apuestas Ganadas" />
-            <label for="apuestas_ganadas">Apuestas Ganadas</label>
+            {{forma.apuestas_ganadas(class="form-control", placeholder="Nombre")}} 
+            <!-- Accedemos al apuestas_ganadas del objeto forma y le agregamos la clase bootstrap form-control 
+             y el placeholder para generar el elemento de tipo input-->
+             {{forma.apuestas_ganadas.label}} 
+            <!-- generamos el elemento de tipo label-->  
           </div>
           <!-- apuestas_perdidas -->
           <div class="form-floating py-2">
-            <input type="number" class="form-control" id="apuestas_perdidas" placeholder="Apuestas Perdidas" />
-            <label for="apuestas_perdidas">Apuestas Perdidas</label>
+            {{forma.apuestas_perdidas(class="form-control", placeholder="Nombre")}} 
+            <!-- Accedemos al apuestas_perdidas del objeto forma y le agregamos la clase bootstrap form-control 
+             y el placeholder para generar el elemento de tipo input-->
+             {{forma.apuestas_perdidas.label}} 
           </div>
           <!--total_apostado -->
           <div class="form-floating py-2">
-            <input type="number" class="form-control" id="total_apostado" placeholder="Total Apostado" />
-            <label for="total_apostado">Total Apostado</label>
+            {{forma.total_apostado(class="form-control", placeholder="Nombre")}} 
+            <!-- Accedemos al total_apostado del objeto forma y le agregamos la clase bootstrap form-control 
+             y el placeholder para generar el elemento de tipo input-->
+             {{forma.total_apostado.label}}
           </div>
           <!--total_ganado -->
           <div class="form-floating py-2">
-            <input type="number" class="form-control" id="total_ganado" placeholder="Total Ganado" />
-            <label for="total_ganado">Total Ganado</label>
+            {{forma.total_ganado(class="form-control", placeholder="Nombre")}} 
+            <!-- Accedemos al total_ganado del objeto forma y le agregamos la clase bootstrap form-control 
+             y el placeholder para generar el elemento de tipo input-->
+             {{forma.total_ganado.label}}
           </div>
           <!--total_perdido -->
           <div class="form-floating py-2">
-            <input type="number" class="form-control" id="total_perdido" placeholder="Total Perdido" />
-            <label for="total_perdido">Total Perdido</label>
+            {{forma.total_perdido(class="form-control", placeholder="Nombre")}} 
+            <!-- Accedemos al total_perdido del objeto forma y le agregamos la clase bootstrap form-control 
+             y el placeholder para generar el elemento de tipo input-->
+             {{forma.total_perdido.label}}
           </div>
           <!--ganado_por_apuesta -->
           <div class="form-floating py-2">
-            <input type="number" class="form-control" id="ganado_por_apuesta" placeholder="Ganado por Apuesta" />
-            <label for="ganado_por_apuesta">Ganado por Apuesta</label>
+            {{forma.ganado_por_apuesta(class="form-control", placeholder="Nombre")}} 
+            <!-- Accedemos al ganado_por_apuesta del objeto forma y le agregamos la clase bootstrap form-control 
+             y el placeholder para generar el elemento de tipo input-->
+             {{forma.ganado_por_apuesta.label}}
           </div>
           <!--balance -->
           <div class="form-floating py-2">
-            <input type="number" class="form-control" id="balance" placeholder="Balance" />
-            <label for="balance">Balance</label>
+            {{forma.balance(class="form-control", placeholder="Nombre")}} 
+            <!-- Accedemos al balance del objeto forma y le agregamos la clase bootstrap form-control 
+             y el placeholder para generar el elemento de tipo input-->
+             {{forma.balance.label}} 
           </div>
           <!--Botones -->
           <!--Boton Guardar -->
           <div class="text-center py-2">
-            <button type="submit" class="btn btn-warning btn-sm me-3">
+            <!-- <button type="submit" class="btn btn-warning btn-sm me-3">
               Guardar
-            </button>
+            </button> -->
+            {{forma.guardar(class="btn btn-warning btn-sm me-2")}} 
             <!--Boton Limpiar formulario -->
-            <input type="reset" class="btn btn-danger btn-sm" value="Limpiar" />
+            <input type="reset" class="btn btn-primary btn-sm me-2" value="Limpiar Formulario" />
+            <a href="/limpiar" class="btn btn-danger btn-sm">
+              Limpiar
+            </a>
           </div>
         </form>
       </div> <!-- div cierre del contenedor del formulario -->

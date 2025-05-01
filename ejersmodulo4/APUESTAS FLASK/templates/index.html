@@ -15,19 +15,24 @@
     <!-- Titulo -->
     <div class="container py-3">
       <h1 class="text-center display-5 text-warning">
-        {{titulo}} <i class="bi bi-award"></i>
+        <i class="bi bi-coin"></i> {{titulo}} <i class="bi bi-coin"></i>
       </h1>
     </div>
   </div> <!-- fin div titulo -->
+  <div class="container-fluid pb-3 text-center py-3">
+    <a href="/index.html" class="btn btn-danger btn-sm">Home</a>
+    <a href="/index2.html" class="btn btn-danger btn-sm">Index2</a>
+  </div>
   <!-- Grid principal -->
   <div class="container-fluid pb-3">
     <div class="d-grid gap-3" style="grid-template-columns: 1fr 2fr;">
       <!-- contenedor del formulario -->
       <div class="border rounded-3 p-2">
         <!-- aca va el formulario -->
-        <form action="/guardar" method="post" autocomplete="off">
+        <form action="/guardar" method="post" autocomplete="off"><!-- url a la que se enviara la 
+                                                            informacion del form con el metodo post -->
           {{forma.csrf_token}}  
-          <!-- AGREGAMOS EL TOKEN PARA USAR FLASK-WTF CON MAS SEGURIDAD -->
+          <!-- AGREGAMOS EL TOKEN PARA USAR FLASK-WTF CON MAS SEGURIDAD contra ataques CSRF-->
 
           <!--Nombre-->
           <div class="form-floating py-2">
